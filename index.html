@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>Form</title>
+</head>
+<body>
+    <!-- onsubmit="return validationPass()" -->
+    <form class="form-style" name="form" method="POST" >
+        <ul>
+            <li class="row-1">
+                <div class="email">
+                    <!-- less than 75 character -->
+                    <label class="text">Email<span style="color:red"> *</span></label>
+                    <input type=""   name="email" id="email" class="field-style field-split align-left"   placeholder="Email" />
+                    <span id="Msg" style="color:red">
+                </div>
+                <div class="password">
+                    <!-- less than 25 digit -->
+                    <label class="text">Passsword<span style="color:red"> *</span></label>
+                    <input type="password" name="password" id="password" class="field-style field-split align-right" placeholder="Password" />
+                    <span id="Msg" style="color:red">
+                </div>
+            </li>
+            <li class="row-2">
+                <label class="text">Address<span style="color:red"> *</span></label>
+                <input type="text" maxlength="75" name="Address" id="address" class="field-style field-full align-none"   placeholder="123 Maint St" />
+                <p id="Msg" style="color:red"></p>
+            </li>
+            <li>
+                <label class="text">Address 2</label>
+                <input type="text" name="Address_2" maxlength="75" class="field-style field-full align-none"  placeholder="Appartment, Studio or Floor" />
+            </li>
+
+            <li class="row-3">
+                <div class="city">
+                    <label class="text">Country<span style="color:red"> *</span></label>
+                    <input type="text" name="city" maxlength="20" id="city" maxlength="50" class="field-style field-split align-left"  placeholder="Country" autocomplete="off"/>
+                    <p id="Msg" style="color:red"></p>
+                </div>
+                <div class="select">
+                    <label class="text">State</label>
+                    <select id="state" class="field-style" name="state" >
+                        <option value="" selected>-- Please select --</option>
+                        <option value="Kandal">Kandal</option>
+                        <option value="Preveng">Preveng</option>
+                        <option value="Phnom penh">Phnom penh</option>
+                        <option value="Kompong Cham">Kompong Cham</option>
+                        <option value="Siem Reap">Siem Reap</option>
+                    </select>
+                    <p id="Msg" style="color:red"></p>
+                </div>
+                <div class="zip">
+                    <label class="text">Zip<span style="color:red"> *</span></label>
+                    <input type="number" name="zip" id="zip" class="field-style field-split align-left"  value="12345" placeholder="Zip" autocomplete="off">
+                    <p id="Msg" style="color:red"></p>
+
+                </div>
+            </li>
+
+            <li class="row-4">
+                <input type="checkbox"  disabled id="check" name="termsconditions">
+                <label for="check"  style="font-size: 12px;"> check me out</label><br>
+                <input type="submit" id="submit" name="submit" value="Sign in" disabled class="button"/>
+               
+            </li>
+        </ul>
+        
+    </form>
+   
+    <script src="./app.js">  </script>
+    <script>
+        $('#check').click(function() {
+        if ($(this).is(':checked')) {
+            $('#submit').removeAttr('disabled');
+        } else {
+            $('#submit').attr('disabled', 'disabled');
+        }
+        });
+    </script>
+
+</body>
+
+
+</html>
